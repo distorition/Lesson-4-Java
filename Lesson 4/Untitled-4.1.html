@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        let price1;
+        let name1;
+        let discont=25;
+        function Product(name,price){
+            this.name=name;
+            this.price=price;
+        }
+        Product.prototype.Discount=function()
+        {
+            let num=price/25*100
+        }
+
+        class Product1
+        {
+            constructor(name,price){
+                name1=name
+                price1=price
+            }
+            Disc()
+            {
+                let dist=parseInt(price1/100*discont)
+                price1=parseInt(price1-dist)
+                alert(price1)
+            }
+        }
+
+        let ob1=new Product1('aa',22)
+        ob1.Disc();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+        let aithor1;
+        let text1;
+        let date1;
+        function Post(author, text, date) {
+            aithor1 = author;
+            text1 = text;
+            date1 = date;
+        }
+
+        Post.prototype.edit=function(text)
+        {
+            text1 = text;
+            alert(text1);
+        }
+
+        class Post1{
+            constructor(author, text, date) {
+                aithor1 = author;
+                text1 = text;
+                date1 = date;
+            }
+            Edit(text) {
+                text1 = text;
+                alert(text1)
+            }
+
+        }
+
+        function AnotherPOst(author, text, date)
+        {
+            Post.call(this,this,this)
+            let hightlender=false;
+        }
+
+        AnotherPOst.prototype=Object.create(Post.prototype);
+        AnotherPOst.prototype.constructor=AnotherPOst;
+        AnotherPOst.prototype.makeTextHighlighted=function(){
+            this.hightlender=true;
+        }
+  class AnotherPOst1 extends Post1 {
+      constructor(author, text, date)
+      {
+          super(author, text, date)
+          let hightlender=false;
+      }
+
+      makeTextHighlighted(){
+        this.hightlender=true;
+      }
+      
+  }
+
+        let ob1 = new Post1('aa', 'ss', 'dd')
+        ob1.Edit('sss')
+        let ob2= new AnotherPOst('as','asddd','dsadasd')
+        ob2.makeTextHighlighted();
+    </script>
+</body>
+
+</html>

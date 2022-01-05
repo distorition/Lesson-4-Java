@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+        let scroe = 0;
+        let question = [
+            {
+                quest: 'Первый вопрос; кто проживает на дне океана',
+                anser: {
+                    'a': 'губка малыш без изьянов',
+                    'b': 'должники мафии',
+                    'с': 'мои тимейты',
+                    's': 'то что лучше не тревожить'
+
+                },
+                current: 'a'
+            },
+            {
+                quest: 'Второй вопрос: Кто всех прекрасней и светлей',
+                anser: {
+                    'a': 'Я',
+                    'b': 'Тоже я',
+                    'c': 'белоснежка',
+                    's': 'звезды'
+
+                },
+                current: 'b'
+            },
+            {
+                quest: 'Третий вопрос: Вместе мы сильны и к победе устремленны',
+                anser: {
+                    'a': 'Винкс',
+                    'b': 'Зерги',
+                    'c': 'Тираниды',
+                    's': 'люди'
+
+                },
+                current: 'a'
+            },
+            {
+                quest: 'Четввертый вопрос: Кто должен вернуться в коноху ',
+                anser: {
+                    'a': 'Наруто',
+                    'b': 'Саске',
+                    'c': 'Хорошие времена',
+                    's': 'что ?'
+
+                },
+                current: 'b'
+            }
+        ]
+        let another = {
+            push: 0,
+            run() {
+                if(!this.someEror()){
+                    console.log("игра закончилась")
+                    console.log(`ваш счёт${scroe}`)
+                    let choise=prompt(`${'хотите сыграть еще ?:Да или НЕт'} `)
+                    if(choise==='да')
+                    {
+                        this.run();
+                    }
+                    return
+                }
+                let result = game.play(question[this.push])
+                this.push++;
+                this.run();
+                push++;
+  
+            },
+            someEror()
+        {
+            return question[this.push]!==undefined
+        }
+        }
+
+        let game = {
+            play(quest) {
+                let answer = "";
+                for (let key in quest.anser) {
+                    answer += `${key}:${quest.anser[key]}\n`
+                }
+                let choise = prompt(`${quest.quest},варианты \n${answer}`)
+                if (choise === quest.current) {
+                    scroe++;
+                }
+            }
+        }
+    
+        console.log(another.run())
+
+    </script>
+</body>
+
+</html>
